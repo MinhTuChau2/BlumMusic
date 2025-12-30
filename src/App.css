@@ -1,0 +1,128 @@
+/* Root container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+  height: 5em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ===== App layout ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Chords - horizontal */
+.chord-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chord {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: #f0f0f0;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.chord.current { background: #646cff44; }
+.chord.next { background: #61dafb44; }
+
+.arrow { font-size: 1.5rem; }
+
+/* Sound panel - horizontal for desktop */
+.sound-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sound-panel label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Controls - horizontal buttons */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.controls button:hover { background: #515ed0; }
+.controls button:disabled { background: #ccc; cursor: not-allowed; }
+
+/* Hand gesture info */
+.hand-gesture-info {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ===== Media queries ===== */
+@media (max-width: 768px) {
+  .chord { font-size: 1.2rem; min-width: 2.5rem; }
+  .sound-panel { flex-direction: column; max-width: 100%; }
+  .controls button { flex: 1 1 40%; }
+}
+
+@media (max-width: 480px) {
+  #root { padding: 0.5rem; }
+  .chord { font-size: 1rem; padding: 0.4rem 0.8rem; }
+  .controls button { flex: 1 1 100%; }
+}
